@@ -1,0 +1,10 @@
+<root versionMajor = "1" versionMinor = "5">
+  <kernel name="foo" language="c" vlnv="xilinx.com:hls:foo:1.0" attributes="" hash="" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="false" compileOptions="" profileType="none" hwControlProtocol="ap_ctrl_hs">
+    <ports>
+    </ports>
+    <args>
+    </args>
+    <compileWorkGroupSize x="1" y="1" z="1"/>
+    <maxWorkGroupSize x="1" y="1" z="1"/>
+  </kernel>
+</root>

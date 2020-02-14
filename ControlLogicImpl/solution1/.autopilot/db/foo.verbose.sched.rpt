@@ -1,0 +1,181 @@
+
+
+================================================================
+== Vitis HLS Report for 'foo'
+================================================================
+* Date:           Fri Feb 14 14:42:59 2020
+
+* Version:        2020.1.0 (Build 2778784 on Wed Feb 12 20:42:44 MST 2020)
+* Project:        ControlLogicImpl
+* Solution:       solution1
+* Product family: virtexuplus
+* Target device:  xcu200-fsgd2104-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 5.238 ns |   2.70 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        5|        5| 50.000 ns | 50.000 ns |    5|    5|   none  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                  |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name    |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_3_1  |        3|        3|         2|          1|          1|     3|    yes   |
+        +------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 2 3 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 4 3 
+3 --> 2 
+4 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.70>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%spectopmodule_ln0 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_2"   --->   Operation 5 'spectopmodule' 'spectopmodule_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %in_r, void @empty, i32, i32, void @empty_0, i32, i32, void @empty_0, void @empty_0, void @empty_0, i32, i32, i32, i32, void @empty_0, void @empty_0"   --->   Operation 6 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %in_r, i64, i64, i64"   --->   Operation 7 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %in_r"   --->   Operation 8 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %a"   --->   Operation 9 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %a, void @empty_1, i32, i32, void @empty_0, i32, i32, void @empty_0, void @empty_0, void @empty_0, i32, i32, i32, i32, void @empty_0, void @empty_0"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %b"   --->   Operation 11 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %b, void @empty_1, i32, i32, void @empty_0, i32, i32, void @empty_0, void @empty_0, void @empty_0, i32, i32, i32, i32, void @empty_0, void @empty_0"   --->   Operation 12 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %c"   --->   Operation 13 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %c, void @empty_1, i32, i32, void @empty_0, i32, i32, void @empty_0, void @empty_0, void @empty_0, i32, i32, i32, i32, void @empty_0, void @empty_0"   --->   Operation 14 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %out_r, void @empty, i32, i32, void @empty_0, i32, i32, void @empty_0, void @empty_0, void @empty_0, i32, i32, i32, i32, void @empty_0, void @empty_0"   --->   Operation 15 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %out_r, i64, i64, i64"   --->   Operation 16 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %out_r"   --->   Operation 17 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%c_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %c" [ControlLogicImpl/.settings/foo.cpp:1]   --->   Operation 18 'read' 'c_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%b_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %b" [ControlLogicImpl/.settings/foo.cpp:1]   --->   Operation 19 'read' 'b_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%a_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %a" [ControlLogicImpl/.settings/foo.cpp:1]   --->   Operation 20 'read' 'a_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%conv = sext i8 %a_read" [ControlLogicImpl/.settings/foo.cpp:1]   --->   Operation 21 'sext' 'conv' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%b_cast = sext i8 %b_read" [ControlLogicImpl/.settings/foo.cpp:1]   --->   Operation 22 'sext' 'b_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%sext_ln3 = sext i8 %c_read" [ControlLogicImpl/.settings/foo.cpp:3]   --->   Operation 23 'sext' 'sext_ln3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.70ns)   --->   "%add_ln5 = add i9 %sext_ln3, i9 %b_cast" [ControlLogicImpl/.settings/foo.cpp:5]   --->   Operation 24 'add' 'add_ln5' <Predicate = true> <Delay = 0.70> <CoreInst = "Adder">   --->   Core 2 'Adder' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%sext_ln5 = sext i9 %add_ln5" [ControlLogicImpl/.settings/foo.cpp:5]   --->   Operation 25 'sext' 'sext_ln5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.60ns)   --->   "%br_ln3 = br void %for.inc" [ControlLogicImpl/.settings/foo.cpp:3]   --->   Operation 26 'br' 'br_ln3' <Predicate = true> <Delay = 0.60>
+
+State 2 <SV = 1> <Delay = 0.59>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%i = phi i2 %add_ln3, void %for.inc.split, i2, void %entry" [ControlLogicImpl/.settings/foo.cpp:3]   --->   Operation 27 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32, i32, i32, i32, void @p_str"   --->   Operation 28 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 29 [1/1] (0.34ns)   --->   "%icmp_ln3 = icmp_eq  i2 %i, i2" [ControlLogicImpl/.settings/foo.cpp:3]   --->   Operation 29 'icmp' 'icmp_ln3' <Predicate = true> <Delay = 0.34> <CoreInst = "Cmp">   --->   Core 11 'Cmp' <Latency = 0> <II = 1> <Delay = 0.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64, i64, i64"   --->   Operation 30 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 31 [1/1] (0.43ns)   --->   "%add_ln3 = add i2 %i, i2" [ControlLogicImpl/.settings/foo.cpp:3]   --->   Operation 31 'add' 'add_ln3' <Predicate = true> <Delay = 0.43> <CoreInst = "Adder">   --->   Core 2 'Adder' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%br_ln3 = br i1 %icmp_ln3, void %for.inc.split, void %for.end" [ControlLogicImpl/.settings/foo.cpp:3]   --->   Operation 32 'br' 'br_ln3' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%zext_ln4 = zext i2 %i" [ControlLogicImpl/.settings/foo.cpp:4]   --->   Operation 33 'zext' 'zext_ln4' <Predicate = (!icmp_ln3)> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%in_r_addr = getelementptr i32 %in_r, i64, i64 %zext_ln4" [ControlLogicImpl/.settings/foo.cpp:4]   --->   Operation 34 'getelementptr' 'in_r_addr' <Predicate = (!icmp_ln3)> <Delay = 0.00>
+ST_2 : Operation 35 [2/2] (0.59ns)   --->   "%x = load i2 %in_r_addr" [ControlLogicImpl/.settings/foo.cpp:4]   --->   Operation 35 'load' 'x' <Predicate = (!icmp_ln3)> <Delay = 0.59> <CoreInst = "RAM">   --->   Core 23 'RAM' <Latency = 1> <II = 1> <Delay = 0.59> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 3> <RAM>
+
+State 3 <SV = 2> <Delay = 5.23>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%specloopname_ln3 = specloopname void @_ssdm_op_SpecLoopName, void @empty_3" [ControlLogicImpl/.settings/foo.cpp:3]   --->   Operation 36 'specloopname' 'specloopname_ln3' <Predicate = (!icmp_ln3)> <Delay = 0.00>
+ST_3 : Operation 37 [1/2] (0.59ns)   --->   "%x = load i2 %in_r_addr" [ControlLogicImpl/.settings/foo.cpp:4]   --->   Operation 37 'load' 'x' <Predicate = (!icmp_ln3)> <Delay = 0.59> <CoreInst = "RAM">   --->   Core 23 'RAM' <Latency = 1> <II = 1> <Delay = 0.59> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 3> <RAM>
+ST_3 : Operation 38 [1/1] (3.17ns)   --->   "%mul_ln5 = mul i32 %x, i32 %conv" [ControlLogicImpl/.settings/foo.cpp:5]   --->   Operation 38 'mul' 'mul_ln5' <Predicate = (!icmp_ln3)> <Delay = 3.17> <CoreInst = "Multiplier">   --->   Core 5 'Multiplier' <Latency = 0> <II = 1> <Delay = 3.17> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 39 [1/1] (0.88ns)   --->   "%y = add i32 %sext_ln5, i32 %mul_ln5" [ControlLogicImpl/.settings/foo.cpp:5]   --->   Operation 39 'add' 'y' <Predicate = (!icmp_ln3)> <Delay = 0.88> <CoreInst = "Adder">   --->   Core 2 'Adder' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 40 [1/1] (0.00ns)   --->   "%out_r_addr = getelementptr i32 %out_r, i64, i64 %zext_ln4" [ControlLogicImpl/.settings/foo.cpp:6]   --->   Operation 40 'getelementptr' 'out_r_addr' <Predicate = (!icmp_ln3)> <Delay = 0.00>
+ST_3 : Operation 41 [1/1] (0.59ns)   --->   "%store_ln6 = store i32 %y, i2 %out_r_addr" [ControlLogicImpl/.settings/foo.cpp:6]   --->   Operation 41 'store' 'store_ln6' <Predicate = (!icmp_ln3)> <Delay = 0.59> <CoreInst = "RAM">   --->   Core 23 'RAM' <Latency = 1> <II = 1> <Delay = 0.59> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 3> <RAM>
+ST_3 : Operation 42 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc"   --->   Operation 42 'br' 'br_ln0' <Predicate = (!icmp_ln3)> <Delay = 0.00>
+
+State 4 <SV = 2> <Delay = 0.00>
+ST_4 : Operation 43 [1/1] (0.00ns)   --->   "%ret_ln8 = ret" [ControlLogicImpl/.settings/foo.cpp:8]   --->   Operation 43 'ret' 'ret_ln8' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 0.705ns
+The critical path consists of the following:
+	wire read on port 'c' (ControlLogicImpl/.settings/foo.cpp:1) [19]  (0 ns)
+	'add' operation ('add_ln5', ControlLogicImpl/.settings/foo.cpp:5) [25]  (0.705 ns)
+
+ <State 2>: 0.594ns
+The critical path consists of the following:
+	'phi' operation ('i', ControlLogicImpl/.settings/foo.cpp:3) with incoming values : ('add_ln3', ControlLogicImpl/.settings/foo.cpp:3) [29]  (0 ns)
+	'getelementptr' operation ('in_r_addr', ControlLogicImpl/.settings/foo.cpp:4) [38]  (0 ns)
+	'load' operation ('x', ControlLogicImpl/.settings/foo.cpp:4) on array 'in_r' [39]  (0.594 ns)
+
+ <State 3>: 5.24ns
+The critical path consists of the following:
+	'load' operation ('x', ControlLogicImpl/.settings/foo.cpp:4) on array 'in_r' [39]  (0.594 ns)
+	'mul' operation ('mul_ln5', ControlLogicImpl/.settings/foo.cpp:5) [40]  (3.17 ns)
+	'add' operation ('y', ControlLogicImpl/.settings/foo.cpp:5) [41]  (0.88 ns)
+	'store' operation ('store_ln6', ControlLogicImpl/.settings/foo.cpp:6) of variable 'y', ControlLogicImpl/.settings/foo.cpp:5 on array 'out_r' [43]  (0.594 ns)
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

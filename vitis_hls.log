@@ -1,0 +1,57 @@
+INFO: [HLS 200-10] Running '/proj/xbuilds/SWIP/2020.1_0212_2001/installs/lin64/Vitis/2020.1/bin/unwrapped/lnx64.o/vitis_hls'
+/proj/xbuilds/SWIP/2020.1_0212_2001/installs/lin64/Vitis/2020.1/tps/tcl/tcl8.5/tzdata/Asia/Calcutta can't be opened.
+INFO: [HLS 200-10] For user 'rsarkari' on host 'xhdrsarkari40x.xlnx.xilinx.com' (Linux_x86_64 version 3.10.0-693.el7.x86_64) on Fri Feb 14 14:42:44 IST 2020
+INFO: [HLS 200-10] On os "CentOS Linux release 7.4.1708 (Core) "
+INFO: [HLS 200-10] In directory '/wrk/xhdhdnobkup3/rsarkari/Learning/Vitis-Projects'
+Sourcing Tcl script '/wrk/xhdhdnobkup3/rsarkari/Learning/Vitis-Projects/ControlLogicImpl/solution1/csynth.tcl'
+INFO: [HLS 200-10] Opening project '/wrk/xhdhdnobkup3/rsarkari/Learning/Vitis-Projects/ControlLogicImpl'.
+INFO: [HLS 200-10] Adding design file 'ControlLogicImpl/.settings/foo.cpp' to the project
+INFO: [HLS 200-10] Opening solution '/wrk/xhdhdnobkup3/rsarkari/Learning/Vitis-Projects/ControlLogicImpl/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xcu200-fsgd2104-2-e'
+INFO: [HLS 200-10] Analyzing design file 'ControlLogicImpl/.settings/foo.cpp' ... 
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' target.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:07 ; elapsed = 00:00:17 . Memory (MB): peak = 1068.922 ; gain = 576.121 ; free physical = 483 ; free virtual = 29631
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:07 ; elapsed = 00:00:17 . Memory (MB): peak = 1068.922 ; gain = 576.121 ; free physical = 483 ; free virtual = 29631
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:07 ; elapsed = 00:00:17 . Memory (MB): peak = 1068.922 ; gain = 576.121 ; free physical = 481 ; free virtual = 29631
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:07 ; elapsed = 00:00:17 . Memory (MB): peak = 1068.922 ; gain = 576.121 ; free physical = 481 ; free virtual = 29631
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_3_1' (ControlLogicImpl/.settings/foo.cpp:3) in function 'foo' automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:07 ; elapsed = 00:00:17 . Memory (MB): peak = 1068.922 ; gain = 576.121 ; free physical = 463 ; free virtual = 29613
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:07 ; elapsed = 00:00:17 . Memory (MB): peak = 1068.922 ; gain = 576.121 ; free physical = 463 ; free virtual = 29613
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'foo' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'foo' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_3_1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 17 seconds; current allocated memory: 149.066 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.03 seconds; current allocated memory: 149.240 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'foo' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'foo/in_r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'foo/a' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'foo/b' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'foo/c' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'foo/out_r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'foo' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Generating core module 'foo_mul_32s_8s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'foo'.
+INFO: [HLS 200-111]  Elapsed time: 0.06 seconds; current allocated memory: 149.643 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'foo_foo_mul_32s_8s_32_1_1_Multiplier_0'
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:08 ; elapsed = 00:00:18 . Memory (MB): peak = 1068.922 ; gain = 576.121 ; free physical = 452 ; free virtual = 29605
+INFO: [VHDL 208-304] Generating VHDL RTL for foo with prefix foo_.
+INFO: [VLOG 209-307] Generating Verilog RTL for foo with prefix foo_.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 190.91 MHz
+INFO: [HLS 200-112] Total elapsed time: 18.37 seconds; peak allocated memory: 149.643 MB.

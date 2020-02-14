@@ -1,0 +1,10 @@
+<root versionMajor = "1" versionMinor = "5">
+  <kernel src_name="foo" language="c" hwCtrl="ap_ctrl_hs" mem_layout="fpga64-xilinx-none">
+    <args>
+      <arg id="0" access_type="r" src_name="x" src_type="char" src_isptr="0" src_bitwidth="8" src_size_or_depth="1" hw_interface="Register" hw_name="x" hw_bitwidth="8" hw_size_or_depth="1"/>
+      <arg id="1" access_type="r" src_name="a" src_type="char" src_isptr="0" src_bitwidth="8" src_size_or_depth="1" hw_interface="Register" hw_name="a" hw_bitwidth="8" hw_size_or_depth="1"/>
+      <arg id="2" access_type="r" src_name="b" src_type="char" src_isptr="0" src_bitwidth="8" src_size_or_depth="1" hw_interface="Register" hw_name="b" hw_bitwidth="8" hw_size_or_depth="1"/>
+      <arg id="3" access_type="r" src_name="c" src_type="char" src_isptr="0" src_bitwidth="8" src_size_or_depth="1" hw_interface="Register" hw_name="c" hw_bitwidth="8" hw_size_or_depth="1"/>
+    </args>
+  </kernel>
+</root>
